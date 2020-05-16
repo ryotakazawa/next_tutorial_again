@@ -1,6 +1,7 @@
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
+import Date from '../../components/date'
 
 export default function Post({ postData }) {
   return (
@@ -34,4 +35,15 @@ export async function getStaticProps({ params }) {
       postData
     }
   }
+}
+
+export default function Post({ postData }) {
+  return (
+    <Layout>
+      ...
+      {/* {postData.date} を以下で置き換える */}
+      <Date dateString={postData.date} />
+      ...
+    </Layout>
+  )
 }
