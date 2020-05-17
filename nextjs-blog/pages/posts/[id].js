@@ -13,7 +13,7 @@ export default function Post({ postData }) {
       <br />
       {postData.id}
       <br />
-      {postData.date}
+      <Date dateString={postData.date} />
       <br />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </Layout>
@@ -35,15 +35,4 @@ export async function getStaticProps({ params }) {
       postData
     }
   }
-}
-
-export default function Post({ postData }) {
-  return (
-    <Layout>
-      ...
-      {/* {postData.date} を以下で置き換える */}
-      <Date dateString={postData.date} />
-      ...
-    </Layout>
-  )
 }
